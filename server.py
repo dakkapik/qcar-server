@@ -1,10 +1,10 @@
-from socketio import Server, WSGIApp
+import socketio
 
 # create a Socket.IO server
-sio = Server()
+sio = socketio.Server()
 
 # wrap with a WSGI application
-app = WSGIApp(sio)
+app = socketio.WSGIApp(sio)
 
 @sio.event
 def controllerInput(sid, data):
